@@ -1,0 +1,212 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/antivanov/js-crawler">js-crawler (v0.3.18)</a>
+</h1>
+<h4>Web crawler for Node.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-crawler">module js-crawler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-crawler.js-crawler">
+            function <span class="apidocSignatureSpan"></span>js-crawler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-crawler.toString">
+            function <span class="apidocSignatureSpan">js-crawler.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.js-crawler.toString">module js-crawler.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.js-crawler.toString.toString">
+            function <span class="apidocSignatureSpan">js-crawler.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-crawler" id="apidoc.module.js-crawler">module js-crawler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-crawler.js-crawler" id="apidoc.element.js-crawler.js-crawler">
+        function <span class="apidocSignatureSpan"></span>js-crawler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Crawler() {
+
+<span class="apidocCodeCommentSpan">  /*
+   * Urls that the Crawler has visited, as some pages may be in the middle of a redirect chain, not all the knownUrls will be actually
+   * reported in the onSuccess or onFailure callbacks, only the final urls in the corresponding redirect chains
+   */
+</span>  this.knownUrls = {};
+
+  /*
+   * Urls that were reported in the onSuccess or onFailure callbacks. this.crawledUrls is a subset of this.knownUrls, and matches
+ it
+   * iff there were no redirects while crawling.
+   */
+  this.crawledUrls = [];
+  this.depth = DEFAULT_DEPTH;
+  this.ignoreRelative = false;
+  this.userAgent = DEFAULT_USERAGENT;
+  this.maxConcurrentRequests = DEFAULT_MAX_CONCURRENT_REQUESTS;
+  this.maxRequestsPerSecond = DEFAULT_MAX_REQUESTS_PER_SECOND;
+  this.shouldCrawl = function(url) {
+    return true;
+  };
+  this.shouldCrawlLinksFrom = function(url) {
+    return true;
+  };
+  //Urls that are queued for crawling, for some of them HTTP requests may not yet have been issued
+  this._currentUrlsToCrawl = [];
+  this._concurrentRequestNumber = 0;
+
+  //Injecting request as a dependency for unit test support
+  this.request = request;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.js-crawler.toString" id="apidoc.element.js-crawler.toString">
+        function <span class="apidocSignatureSpan">js-crawler.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (response.headers['content-encoding']) {
+    encoding = response.headers['content-encoding'];
+  }
+  //console.log('encoding = "' + encoding + '"');
+  var decodedBody;
+  try {
+    decodedBody = response.body.<span class="apidocCodeKeywordSpan">toString</span>(encoding);
+  } catch (decodingError) {
+    decodedBody = response.body.toString(defaultEncoding);
+  }
+  return decodedBody;
+};
+
+Crawler.prototype._stripComments = function(str) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.js-crawler.toString" id="apidoc.module.js-crawler.toString">module js-crawler.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.js-crawler.toString.toString" id="apidoc.element.js-crawler.toString.toString">
+        function <span class="apidocSignatureSpan">js-crawler.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (response.headers['content-encoding']) {
+    encoding = response.headers['content-encoding'];
+  }
+  //console.log('encoding = "' + encoding + '"');
+  var decodedBody;
+  try {
+    decodedBody = response.body.<span class="apidocCodeKeywordSpan">toString</span>(encoding);
+  } catch (decodingError) {
+    decodedBody = response.body.toString(defaultEncoding);
+  }
+  return decodedBody;
+};
+
+Crawler.prototype._stripComments = function(str) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
