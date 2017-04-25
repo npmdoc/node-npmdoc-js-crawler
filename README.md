@@ -1,4 +1,7 @@
-# api documentation for  [js-crawler (v0.3.18)](https://github.com/antivanov/js-crawler)  [![npm package](https://img.shields.io/npm/v/npmdoc-js-crawler.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-js-crawler) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-js-crawler.svg)](https://travis-ci.org/npmdoc/node-npmdoc-js-crawler)
+# npmdoc-js-crawler
+
+#### basic api documentation for  [js-crawler (v0.3.18)](https://github.com/antivanov/js-crawler)  [![npm package](https://img.shields.io/npm/v/npmdoc-js-crawler.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-js-crawler) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-js-crawler.svg)](https://travis-ci.org/npmdoc/node-npmdoc-js-crawler)
+
 #### Web crawler for Node.js
 
 [![NPM](https://nodei.co/npm/js-crawler.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/js-crawler)
@@ -78,7 +81,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "version": "0.3.18"
+    "version": "0.3.18",
+    "bin": {}
 }
 ```
 

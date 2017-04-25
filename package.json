@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "api documentation for [js-crawler (v0.3.18)](https://github.com/antivanov/js-crawler) [![npm package](https://img.shields.io/npm/v/npmdoc-js-crawler.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-js-crawler) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-js-crawler.svg)](https://travis-ci.org/npmdoc/node-npmdoc-js-crawler)",
+    "description": "#### basic api documentation for  [js-crawler (v0.3.18)](https://github.com/antivanov/js-crawler)  [![npm package](https://img.shields.io/npm/v/npmdoc-js-crawler.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-js-crawler) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-js-crawler.svg)](https://travis-ci.org/npmdoc/node-npmdoc-js-crawler)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "js-crawler": "*",
@@ -35,5 +35,5 @@
         "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.2"
+    "version": "2017.4.25"
 }
